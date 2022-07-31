@@ -11,11 +11,13 @@ type GetStream struct {
 }
 
 func newGetStream(url string) (*GetStream, error) {
+	fmt.Println("rpc:get stream from:", url)
 	r, e := http.Get(url)
 	if e != nil {
 		return nil, e
 	}
 	if r.StatusCode != http.StatusOK {
+		fmt.Println("URL:", url)
 		return nil, fmt.Errorf("dataServer return http code %d", r.StatusCode)
 	}
 	return &GetStream{r.Body}, nil
