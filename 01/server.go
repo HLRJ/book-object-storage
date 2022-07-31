@@ -10,5 +10,5 @@ import (
 func main() {
 	http.HandleFunc("/objects/", objects.Handler)
 	// 由于是本地运行，将ip端口改成本地ip
-	log.Fatal(http.ListenAndServe("127.0.0.1"+os.Getenv("LISTEN_ADDRESS"), nil))
+	log.Fatal(http.ListenAndServe(os.Getenv("LISTEN_ADDRESS"), nil))
 }
