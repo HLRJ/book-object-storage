@@ -1,4 +1,4 @@
-package dataServer
+package main
 
 import (
 	"book-object-storage/03/dataServer/heartbeat"
