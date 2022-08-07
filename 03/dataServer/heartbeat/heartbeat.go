@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func StartHeartbeat() {
+func StartHeartBeat() {
 	queue := rabbitmq.New(os.Getenv("RABBITMQ_SERVER"))
 	defer queue.Close()
 	for {
