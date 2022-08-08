@@ -12,7 +12,7 @@ type PutStream struct {
 }
 
 func NewPutStream(server, object string) *PutStream {
-	reader, writer := io.Pipe() //创建一对reader和writer管道
+	reader, writer := io.Pipe() //创建一对reader和writer管道 管道互联，写入writer的东西可以从reader读出来
 	c := make(chan error)
 	go func() {
 		request, _ := http.NewRequest("PUT", "http://"+server+"/objects/"+object, reader)
